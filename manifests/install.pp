@@ -45,7 +45,6 @@ class redis::install (
     # install necessary packages for build.
     case $::operatingsystem {
       'Debian', 'Ubuntu': {
-        ensure_packages('build-essential')
         Package['build-essential'] -> Anchor['redis::prepare_build']
       }
       'Fedora', 'RedHat', 'CentOS', 'OEL', 'OracleLinux', 'Amazon', 'Scientific': {
